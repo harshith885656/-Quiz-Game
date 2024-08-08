@@ -1,0 +1,68 @@
+questions = ("1)The fear of insects is known as what? ",
+                       "2)Which animal lays the largest eggs? ",
+                       "3)What is the most abundant gas in Earth's atmosphere? ",
+                       "4)How many bones are in the human body? ",
+                       "5)Which planet in the solar system is the hottest? ",
+                       "6)Which app has the most total users? ",
+                       "7)How long did dinosaurs live on the earth?",
+                       "8)What is the tallest mountain in the world?",
+                       "9)Which element is represented by the chemical symbol'O'?",
+                       "10)What is the primary function of the heart in the human body?")
+
+options = (("A. Entomophobia", "B. Arachnophobia", "C. Ailurophobia", "D. Hydrophobia"),
+                   ("A. Whale", "B. Crocodile", "C. Elephant", "D. Ostrich"),
+                   ("A. Nitrogen", "B. Oxygen", "C. Carbon-Dioxide", "D. Hydrogen"),
+                   ("A. 206", "B. 207", "C. 208", "D. 209"),
+                   ("A. Mercury", "B. Venus", "C. Earth", "D. Mars"),
+                   ("A. TikTok", "B. Snapchat", "C. Instagram", "D. Facebook"),
+                   ("A. 100-150 million years", "B. 150-200 million years ", "C. 200-250 million years", "D. 250+ million years"),
+                   ("A. K2", "B. Mount Everest", "C. Mount Kilimanjaro", "D. Mount Elbrus"),
+                   ("A. Oxygen", "B. Gold", "C. Osmium", "D. Hydrogen"),
+                   ("A. Digesting food", "B. Filtering blood", "C. Pumping blood", "D. Breathing"))
+
+answers = ("A", "D", "A", "A", "B", "C", "B", "B", "A", "C")
+guesses = []
+score = 0
+question_num = 0
+
+for question in questions:
+    print("----------------------")
+    print(question)
+    for option in options[question_num]:
+        print(option)
+
+    guess = input("Enter (A, B, C, D): ").upper()
+    guesses.append(guess)
+    if guess == answers[question_num]:
+        score += 1
+        print("CORRECT!")
+    else:
+        print("INCORRECT!")
+        print(f"{answers[question_num]} is the correct answer")
+    question_num += 1
+
+print("----------------------")
+print("       RESULTS        ")
+print("----------------------")
+
+print("answers: ", end="")
+for answer in answers:
+    print(answer, end=" ")
+print()
+
+print("guesses: ", end="")
+for guess in guesses:
+    print(guess, end=" ")
+print()
+
+score = int(score / len(questions) * 100)
+print(f"Your score is: {score}%")
+if score<90:
+    if score>50:
+        print("Not bad keep practicing")
+    else:
+        print("You can achieve more")
+else:
+    print("Excellent keep going! ")
+
+
